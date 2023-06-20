@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import Content from "~/components/content";
 import Header from "~/components/header";
 
