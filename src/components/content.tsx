@@ -52,23 +52,25 @@ const Content = () => {
     },
   });
 
-  if(sessionData?.user === undefined) {
+  if (sessionData?.user === undefined) {
     return (
       <div>
-        <h2 className="text-4xl text-white text-center mt-32">Para ver as suas anotações, por favor efetue o login.</h2>
+        <h2 className="mt-32 text-center text-4xl text-white">
+          Para ver as suas anotações, por favor efetue o login.
+        </h2>
       </div>
-    )
+    );
   }
 
   return (
     <div className="mx-5 mt-5 grid grid-cols-4 gap-2">
       <div className="px-2">
-        <ul className="rounded-box w-56 bg-base-100 p-2 gap-2">
+        <ul className="rounded-box w-56 gap-2 bg-base-100 p-2">
           {topics?.map((topic) => (
             <li key={topic.id}>
               <a
                 href="#"
-                className="hover:text-gray-600 transition-colors"
+                className="transition-colors hover:text-gray-600"
                 onClick={(e) => {
                   e.preventDefault();
                   setSelectedTopic(topic);
@@ -76,9 +78,13 @@ const Content = () => {
               >
                 {topic.title}
               </a>
-              <a href="#" className="ml-2 hover:text-gray-500 transition-colors" onClick={() => deleteTopic.mutate({ id: topic.id })}>
-                  Excluir
-                </a>
+              <a
+                href="#"
+                className="ml-2 transition-colors hover:text-gray-500"
+                onClick={() => deleteTopic.mutate({ id: topic.id })}
+              >
+                Excluir
+              </a>
             </li>
           ))}
         </ul>

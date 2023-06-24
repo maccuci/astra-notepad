@@ -24,7 +24,7 @@ const Header = () => {
                   </div>
                 </label>
                 <button
-                  className="bg-purple-600 hover:bg-purple-700 py-3 px-8 rounded-xl hover:-translate-y-0.5 transition-all"
+                  className="rounded-xl bg-purple-600 px-8 py-3 transition-all hover:-translate-y-0.5 hover:bg-purple-700"
                   onClick={() => signOut()}
                 >
                   Sair
@@ -32,7 +32,7 @@ const Header = () => {
               </div>
             ) : (
               <button
-                className="bg-purple-600 hover:bg-purple-700 py-3 px-8 rounded-xl hover:-translate-y-0.5 transition-all"
+                className="rounded-xl bg-purple-600 px-8 py-3 transition-all hover:-translate-y-0.5 hover:bg-purple-700"
                 onClick={() => signIn()}
               >
                 Entrar

@@ -3,10 +3,15 @@ import CodeMirror from "@uiw/react-codemirror";
 import { markdown, markdownLanguage } from "@codemirror/lang-markdown";
 import { languages } from "@codemirror/language-data";
 
-
-const NoteEditor = ({ onSave }: { onSave: (note: { title: string; content: string }) => void; }) => {
+const NoteEditor = ({
+  onSave,
+}: {
+  onSave: (note: { title: string; content: string }) => void;
+}) => {
   const [code, setCode] = useState<string>("");
   const [title, setTitle] = useState<string>("");
+
+  const disableButton = title.trim().length === 0 || code.trim().length === 0;
 
   return (
     <div className="card mt-5 border border-gray-200 bg-base-100 shadow-xl">
@@ -44,7 +49,7 @@ const NoteEditor = ({ onSave }: { onSave: (note: { title: string; content: strin
             setTitle("");
           }}
           className="btn-info btn m-2"
-          disabled={title.trim().length === 0 || code.trim().length === 0}
+          disabled={disableButton}
         >
           Salvar
         </button>
