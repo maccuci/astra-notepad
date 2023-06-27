@@ -2,6 +2,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 
 const Header = () => {
   const { data: sessionData } = useSession();
+  const isLogged = sessionData?.user
 
   return (
     <div>
@@ -13,7 +14,7 @@ const Header = () => {
         </div>
         <div className="flex-none gap-2">
           <div className="dropdown-end dropdown">
-            {sessionData?.user ? (
+            {isLogged ? (
               <div className="flex gap-2">
                 <label tabIndex={0} className="btn-ghost btn-circle avatar btn">
                   <div className="w-10 rounded-full">

@@ -11,7 +11,7 @@ const NoteEditor = ({
   const [code, setCode] = useState<string>("");
   const [title, setTitle] = useState<string>("");
 
-  const disableButton = title.trim().length === 0 || code.trim().length === 0;
+  const isDisable = title.trim().length === 0 || code.trim().length === 0;
 
   return (
     <div className="card mt-5 border border-gray-200 bg-base-100 shadow-xl">
@@ -49,7 +49,7 @@ const NoteEditor = ({
             setTitle("");
           }}
           className="btn-info btn m-2"
-          disabled={disableButton}
+          disabled={isDisable}
         >
           Salvar
         </button>

@@ -50,7 +50,7 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
-    topics         Topic[]
+    topics        Topic[]
 }
 
 model VerificationToken {
