@@ -1,8 +1,10 @@
 import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const { data: sessionData } = useSession();
-  const isLogged = sessionData?.user
+  const isLogged = sessionData?.user;
 
   return (
     <div>
@@ -21,23 +23,20 @@ const Header = () => {
                     <img
                       src={sessionData?.user?.image ?? ""}
                       alt={sessionData?.user?.name ?? ""}
+                      width={30}
+                      height={30}
                     />
                   </div>
                 </label>
                 <button
-                  className="rounded-xl bg-purple-600 px-8 py-3 transition-all hover:-translate-y-0.5 hover:bg-purple-700"
+                  className="rounded-xl bg-purple-600 px-8 py-3 font-semibold transition-all hover:-translate-y-0.5 hover:bg-purple-700"
                   onClick={() => signOut()}
                 >
                   Sair
                 </button>
               </div>
             ) : (
-              <button
-                className="rounded-xl bg-purple-600 px-8 py-3 transition-all hover:-translate-y-0.5 hover:bg-purple-700"
-                onClick={() => signIn()}
-              >
-                Entrar
-              </button>
+              <></>
             )}
           </div>
         </div>

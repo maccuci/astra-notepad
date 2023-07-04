@@ -3,6 +3,7 @@ import { useState } from "react";
 import { type RouterOutputs, api } from "~/utils/api";
 import NoteEditor from "./note-editor";
 import NoteCard from "./note-card";
+import Login from "./login";
 
 type Topic = RouterOutputs["topic"]["getAll"][0];
 
@@ -55,9 +56,10 @@ const Content = () => {
   if (sessionData?.user === undefined) {
     return (
       <div>
-        <h2 className="mt-32 text-center text-4xl text-white">
-          Para ver as suas anotações, por favor efetue o login.
+        <h2 className="mb-6 mt-32 text-center text-4xl text-white">
+          Bem-vindo ao Astra Notepad!
         </h2>
+        <Login />
       </div>
     );
   }

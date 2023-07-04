@@ -28,7 +28,10 @@ const NoteCard = ({ note, onDelete }: { note: Note; onDelete: () => void }) => {
           </div>
         </div>
         <div className="card-actions mx-2 flex justify-end">
-          <button className="btn-error btn-xs btn px-5" onClick={onDelete}>
+          <button
+            className="m-2 rounded-xl bg-red-600 px-4 py-3 text-gray-900 transition-colors hover:bg-red-700"
+            onClick={onDelete}
+          >
             Excluir
           </button>
         </div>

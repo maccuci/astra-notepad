@@ -48,7 +48,7 @@ const NoteEditor = ({
             setCode("");
             setTitle("");
           }}
-          className="btn-info btn m-2"
+          className="m-2 rounded-xl bg-cyan-400 px-4 py-3 text-gray-900 transition-colors hover:bg-cyan-500"
           disabled={isDisable}
         >
           Salvar
