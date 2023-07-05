@@ -1,6 +1,4 @@
-import { signIn, signOut, useSession } from "next-auth/react";
-import Image from "next/image";
-import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
 
 const Header = () => {
   const { data: sessionData } = useSession();
