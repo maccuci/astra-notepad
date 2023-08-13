@@ -3,15 +3,16 @@ import Head from "next/head";
 import Content from "~/components/content";
 import Header from "~/components/header";
 
-import { Sofia_Sans } from "next/font/google"
+import { Ubuntu } from "next/font/google"
 
-const sofia = Sofia_Sans({
-  subsets: ["latin"]
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  weight: ["400"],
 })
 
 const Home: NextPage = () => {
   return (
-    <div className={`${sofia.className}`}>
+    <div className={`${ubuntu.className}`}>
       <Head>
         <title>Astra Notepad</title>
         <meta name="description" content="Notepad" />
